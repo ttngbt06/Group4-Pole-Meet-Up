@@ -45,7 +45,7 @@ by Martin, Zach, Toan and Sheila ![Github license](https://img.shields.io/badge/
 
      - **WHEN**  I click on the homepage
      - **THEN**  I am taken to the login / sign up screen
-     - 
+     
      - **WHEN**  I choose to sign up
      - **THEN**  I am prompted to create a username and a password, and submit an email address
 
