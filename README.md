@@ -33,59 +33,58 @@ by Martin, Zach, Toan and Sheila ![Github license](https://img.shields.io/badge/
    - Used for testing
   
   ### User Story
-- AS A developer    
-    - I WANT  
-    - SO THAT 
+- AS A developer with various social circles    
+    - I WANT an accessible app  
+    - SO THAT I can browse events and activities in my local area, create polls with friends & family, and quickly reach a consensus on how to spend an evening 
   
   ### Acceptance Criteria  
--  **GIVEN**  
-     - **WHEN**  
-     - **THEN**  
+-  **GIVEN** a social media-style application
+     - **WHEN** I visit the app for the first time
+     - **THEN**  I am greeted with a display of various types of events including food, sports, and entertainment, showcasing what the app has to offer
 
 
-     - **WHEN**  
-     - **THEN**  
+     - **WHEN**  I click on the homepage
+     - **THEN**  I am taken to the login / sign up screen
      - 
-     - **WHEN**  
-     - **THEN**  
+     - **WHEN**  I choose to sign up
+     - **THEN**  I am prompted to create a username and a password, and submit an email address
 
-     - **WHEN**  
-     - **THEN**  
+     - **WHEN**  I click the sign up button
+     - **THEN**  my credentials are saved and I am logged in
 
-     - **WHEN**  
-     - **THEN**  
+     - **WHEN**  I revisit the site and choose to log in
+     - **THEN**  I am prompted to enter my username and password
 
-     - **WHEN**  
-     - **THEN**  
+     - **WHEN**  I am logged into the site
+     - **THEN**  I see options for Browse, Create Poll, Poll History, Contact List, and to log out
 
-     - **WHEN**  
-     - **THEN**  
+     - **WHEN**  I click Browse
+     - **THEN**  I am brought to another screen to choose from food/dining, sports, and entertainment events
 
-     - **WHEN**  
-     - **THEN**  
+     - **WHEN**  I click on any of these options
+     - **THEN**  I am brought to another screen displaying relevant options to the user's location
 
-     - **WHEN**  
-     - **THEN**  
+     - **WHEN**  I click Back
+     - **THEN**  I am brought back to a previous screen with options to Browse, Create Poll, Poll History, or view Contact List
 
-     - **WHEN**  
-     - **THEN**  
+     - **WHEN**  I click Create Poll
+     - **THEN**  I am brought to a form to fill out Poll options and what recipients to include in my Poll, with a Submit button
 
-     - **WHEN**  
-     - **THEN**  
+     - **WHEN**  I click Submit
+     - **THEN**  the poll is sent to recipients and all users are given 24 hours to vote
 
-     - **WHEN**  
-     - **THEN**  
+     - **WHEN**  I click Poll History
+     - **THEN**  I am able to view a list in chronological order of all Polls I have created or have been a part of
 
-     - **WHEN**  
-     - **THEN**  
+     - **WHEN**  I click Back, 
+     - **THEN**  I am brought back to the previous screen with Browse, Create, History, and Contact List options
 
-     - **WHEN**  
-     - **THEN**  
+     - **WHEN**  I click Contact List
+     - **THEN**  I am brought to a screen with my list of contacts, with options to add, edit, and delete contacts
 
-     - **WHEN**  
-     - **THEN**  
-     - **WHEN**  
-     - **THEN**  
+     - **WHEN**  I click Add,
+     - **THEN**  I am prompted to enter my contact's email or phone number
+     
 
 
 
