@@ -120,7 +120,7 @@ by Martin, Zach, Toan and Sheila ![Github license](https://img.shields.io/badge/
 
 ## Features
   - Using socket.io
-  - 
+  - Using handlebars
 
 ## Challenges  
   - Learning a new language   
