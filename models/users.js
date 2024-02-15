@@ -1,4 +1,4 @@
-const bcrypt = require("bcypt");
+const bcrypt = require("bcrypt");
 const sequelize = require("./config/connection");
 const { Model, DataTypes } = require("sequelize");
 
@@ -33,6 +33,9 @@ Users.init(
       validate: {
         len: [5],
       },
+    },
+    date_created: {
+
     },
   },
   {
