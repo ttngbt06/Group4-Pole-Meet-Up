@@ -1,6 +1,6 @@
 # Group4-Poll-Meet-Up<!-- omit from toc -->
 by Martin, Zach, Toan and Sheila ![Github license](https://img.shields.io/badge/license-MIT-blue.svg)  
- ![alt text])
+ ![alt text])  insert logo here
 ## Description <!-- omit from toc -->
 
 
@@ -97,7 +97,7 @@ by Martin, Zach, Toan and Sheila ![Github license](https://img.shields.io/badge/
            -  password - [enter your password]  
            -  source schema.sql  
            -  quit (this is going to end the sql shell = Bye)  
-   ![alt text](public/assets/img/database.png)
+   ![alt text](public/assets/img/database.png) UPDATE
 - Run seeds
   - JS server.js - right click server.js
       - Then open in an integrated terminal and type the follow commands in  
@@ -106,25 +106,25 @@ by Martin, Zach, Toan and Sheila ![Github license](https://img.shields.io/badge/
       - Starting the server - type the following below in the command line
           - npm run watch  
            - response on last line = Now Listening
-  ![alt text](public/assets/img/seeds.png)
-  ![alt text](public/assets/img/seeds2.png)
-- Insomnia - testing will be done here
+  ![alt text](public/assets/img/seeds.png)  UPDATE
+  ![alt text](public/assets/img/seeds2.png)  UPDDATE  
+- Insomnia - testing will be done using Insomnia
 
  - Database Model Diagram  
-![alt text](<assets/img/EER Diagram.png>)  
+![alt text](assets/imgs/ERD.png)
   
-  DEMO: (https:)
-
-## Wireframe  
-
+## Wireframe    
+- Laying out the group ideas on the first day
+![alt text](assets/imgs/wireframe.png)
 
 ## Features
   - Using socket.io
   - Using handlebars
 
 ## Challenges  
-  - Learning a new language   
-  - 
+  - Learning a new language, socket.io  
+  - Group project 
+    - divide and conquer while maintaining great communication to all cohorts
 
 
 ## Contributing
@@ -142,7 +142,8 @@ by Martin, Zach, Toan and Sheila ![Github license](https://img.shields.io/badge/
 [Insomnia](https://insomnia.rest)  
 [Logo Maker](https://logo.com/)  
 [cdnjs](https://cdnjs.com/libraries)
-[socket.io](https://socket.io/blog/socket-io-3-release/)
+[socket.io](https://socket.io/blog/socket-io-3-release/)  
+[handlebars](https://handlebarsjs.com/)  
 U of M teachers and materials from bootcamp
 
 ## Testing
@@ -157,7 +158,9 @@ If you have any questions, or additional feedback, please feel free to email me 
 [https://github.com/ttngbt06/Group4-Pole-Meet-Up.git](https://github.com/ttngbt06/Group4-Pole-Meet-Up.git)
 
 * Email -
-slhanson11@live.com, Martin, Toan, Zach
+slhanson11@live.com,  
+insert your emails   
+Martin, Toan, Zach
 
 ## License 
 
@@ -174,5 +177,6 @@ slhanson11@live.com, Martin, Toan, Zach
 ![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)  ![Lenovo](https://img.shields.io/badge/lenovo-E2231A?style=for-the-badge&logo=lenovo&logoColor=white)  ![Sequelize Badge](https://img.shields.io/badge/Sequelize-52B0E7?logo=sequelize&logoColor=fff&style=flat-square)
 ![W3schools](https://img.shields.io/badge/W3Schools-04AA6D?style=for-the-badge&logo=W3Schools&logoColor=white) ![JSON](https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=red)  
 ![Prettier](https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E) ![Zoom](https://img.shields.io/badge/Zoom-2D8CFF?style=for-the-badge&logo=zoom&logoColor=white) ![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)  ![Google Chrome](https://img.shields.io/badge/Google_chrome-4285F4?style=for-the-badge&logo=Google-chrome&logoColor=white)  
-![Socket.io](https://img.shields.io/badge/Socket.io-black?logo=socket.io&badgeColor=010101)  ![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)
+![Socket.io](https://img.shields.io/badge/Socket.io-black?logo=socket.io&badgeColor=010101)  ![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)  ![Handlebars](https://img.shields.io/badge/Handlebars%20js-f0772b?style=for-the-badge&logo=handlebarsdotjs&logoColor=black)  
+
 
