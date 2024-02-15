@@ -1,0 +1,17 @@
+const { Votes } = require('../models');
+
+const votesData = [
+{
+
+},
+{
+
+},
+{
+
+},
+];
+
+const seedVotes = () => Votes.bultCreate(votesData);
+
+module.exports = seedVotes;
