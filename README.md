@@ -1,4 +1,4 @@
-# Group4-Pole-Meet-Up<!-- omit from toc -->
+# Group4-Poll-Meet-Up<!-- omit from toc -->
 by Martin, Zach, Toan and Sheila ![Github license](https://img.shields.io/badge/license-MIT-blue.svg)  
  ![alt text])
 ## Description <!-- omit from toc -->
