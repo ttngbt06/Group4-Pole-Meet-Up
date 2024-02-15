@@ -152,7 +152,7 @@ U of M teachers and materials from bootcamp
 
 ## Questions
 ![Ask me anything](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)
-If you have any questions, or additional feedback, please feel free to email me and I will respond as soon as possible.
+If you have any questions, or additional feedback, please feel free to email us and we will respond as soon as possible.
     
 * Github -
 [https://github.com/ttngbt06/Group4-Pole-Meet-Up.git](https://github.com/ttngbt06/Group4-Pole-Meet-Up.git)
