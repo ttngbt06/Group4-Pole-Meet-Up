@@ -1,31 +1,30 @@
 const sequelize = require("../config/connection");
 const { Model, DataTypes } = require("sequelize");
 
-class Votes extends Model {}
+class PollsCategories extends Model {}
 
-Votes.init(
+PollsCategories.init(
+  // Define files/columns on model
   {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true,      
     },
-    user_id: {
+    poll_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       references: {
-        model: "users",
+        model: "polls",
         key: "id",
-      },
+      },      
     },
-    option_id: {
+    category_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       references: {
-        model: "options",
+        model: "categories",
         key: "id",
-      },
+      },      
     },
   },
   {
@@ -33,8 +32,8 @@ Votes.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "votes",
+    modelName: "pollcategories",
   }
 );
 
-module.exports = Votes;
+module.exports = PollsCategories;

@@ -1,11 +1,7 @@
-//const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
 const { Model, DataTypes } = require("sequelize");
 
-class Categories extends Model {
-  // checkPassword(loginPw) {
-  //   return bcrypt.compareSync(loginPw, this.password);
-}
+class Categories extends Model {}
 
 Categories.init(
   // Define fields/columns on model
