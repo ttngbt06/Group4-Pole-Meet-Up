@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 //Import the custom middleware
-const withAuth = require('../Ulits/auth');
+const withAuth = require('../utils/auth');
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {

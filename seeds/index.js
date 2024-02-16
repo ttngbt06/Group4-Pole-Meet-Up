@@ -1,4 +1,4 @@
-const seedCategories = require('.//categories-seeds');
+const seedCategories = require('./categories-seeds');
 const seedOptions = require('./option-seeds');
 const seedPollCategories = require('./poll-categories-seeds');
 const seedPolls = require('./polls-seeds');
