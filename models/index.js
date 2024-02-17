@@ -1,11 +1,23 @@
-const Categories = require("./categories");
-const Options = require("./options");
-const Polls = require("./polls");
-const PollCategories = require("./polls-categories");
-const Users = require("./users");
-const Votes = require("./votes");
+const Categories = require("./Categories");
+const Users = require("./Users");
+const PollCategories = require("./PollCategories");
+const Polls = require("./Polls");
+const Options = require("./Options");
+const Votes = require("./Votes");
 
-// Votes belongTo Users
+// Polls belongsToMany Categories through PollCategories
+Polls.belongsToMany(Categories, {
+  through: PollCategories,
+  foreignKey: "poll_id"
+});
+
+// Categories belongsToMany Polls through PollCategories
+Categories.belongsToMany(Polls, {
+  through: PollCategories,
+  foreignKey: "category_id"
+});
+
+// Votes belongsTo Users
 Votes.belongsTo(Users, {
   foreignKey: "user_id",
 });
@@ -15,7 +27,7 @@ Users.hasMany(Votes, {
   onDelete: "SET NULL"
 });
 
-// Votes belongTo Options
+// Votes belongsTo Options
 Votes.belongsTo(Options, {
   foreignKey: "option_id",
 });
@@ -25,8 +37,8 @@ Options.hasMany(Votes, {
   onDelete: "SET NULL"
 });
 
-// Options belongTo Polls
-Options.belongTo(Polls, {
+// Options belongsTo Polls
+Options.belongsTo(Polls, {
   foreignKey: "poll_id",
 });
 
@@ -35,7 +47,7 @@ Polls.hasMany(Options, {
   onDelete: "SET NULL"
 });
 
-// Polls belongTo Users
+// Polls belongsTo Users
 Polls.belongsTo(Users, {
   foreignKey: "user_id"
 });
@@ -45,14 +57,4 @@ Users.hasMany(Polls, {
   onDelete: "SET NULL"
 });
 
-// Polls hasMany Categories through PollCategories
-Polls.hasMany(Categories, {
-  through: PollCategories,
-  foreignKey: "poll_id"
-});
-
-// Categories hasMany Polls through PollCategories
-Categories.hasMany(Polls, {
-  through: PollCategories,
-  foreignKey: "category_id"
-});
+module.exports = { Categories, Users, PollCategories, Polls, Options, Votes };
