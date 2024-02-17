@@ -1,11 +1,7 @@
-//const bcrypt = require("bcrypt");
-const sequelize = require("./config/connection");
+const sequelize = require("../config/connection");
 const { Model, DataTypes } = require("sequelize");
 
-class Options extends Model {
-  // checkPassword(loginPw) {
-  //   return bcrypt.compareSync(loginPw, this.password);
-}
+class Options extends Model {}
 
 Options.init(
   // Define files/columns on model
@@ -17,13 +13,20 @@ Options.init(
       autoIncrement: true,
     },
     poll_id: {
-
+      type: DataTypes.INTEGER,
+      references: {
+        model: "polls",
+        key: "id",
+      },
     },
     name: {
-
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     date_created: {
-
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
   },
   {

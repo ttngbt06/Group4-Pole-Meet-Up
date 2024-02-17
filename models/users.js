@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const sequelize = require("./config/connection");
+const sequelize = require("../config/connection");
 const { Model, DataTypes } = require("sequelize");
 
 class Users extends Model {
@@ -35,7 +35,9 @@ Users.init(
       },
     },
     date_created: {
-
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
   },
   {

@@ -1,0 +1,38 @@
+[
+  {
+    "poll_id": 1,
+    "name": "Olive Garden"
+  },
+  {
+    "poll_id": 1,
+    "name": "Texas Roadhouse"
+  },
+  {
+    "poll_id": 1,
+    "name": "Outback Steakhouse"
+  },
+  {
+    "poll_id": 2,
+    "name": "Elton John"
+  },
+  {
+    "poll_id": 2,
+    "name": "O.A.R."
+  },
+  {
+    "poll_id": 3,
+    "name": "Soccer"
+  },
+  {
+    "poll_id": 3,
+    "name": "Boxing"
+  },
+  {
+    "poll_id": 3,
+    "name": "Golf"
+  },
+  {
+    "poll_id": 3,
+    "name": "Baseball"
+  }
+]
