@@ -56,3 +56,5 @@ Polls.belongsTo(Users, {
 Users.hasMany(Polls, {
   onDelete: "SET NULL"
 });
+
+module.exports = { Categories, Users, PollCategories, Polls, Options, Votes };

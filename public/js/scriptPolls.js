@@ -1,5 +1,5 @@
 // Verify same server as indexPolls.html 
-const socket = io("http://localhost:8000");
+const socket = io();
 
 const progressBoxes = document.querySelectorAll(".progress-box");
 const percentTags = document.querySelectorAll('.percent-tag');

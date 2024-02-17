@@ -5,9 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Polling App</title>
-    <link rel="stylesheet" href="../public/css/polls.css" />
-    <script defer src="https://voting-app-server-57ji.onrender.com/socket.io/socket.io.js">
-    </script>
+    <link rel="stylesheet" type="text/css" href="./public/css/stylespolls.css" />
+    <!--<script defer src="https://voting-app-server-57ji.onrender.com/socket.io/socket.io.js"></script>-->
   </head>
   <body>
     <div class="container">
@@ -38,5 +37,9 @@
       </div>
       <h3>Total Votes : <span id="totalVotes"></span></h3>
     </div>
+    <script src="./node_modules/socket.io/client-dist/socket.io.js"></script>
+    <script>
+      var socket = io();
+    </script>
   </body>
 </html>

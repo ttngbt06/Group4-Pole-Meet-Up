@@ -36,10 +36,20 @@ Polls.init(
     expiration_date: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW, // TODO: change to now + 24 hours
+      defaultValue: DataTypes.NOW,
     },
   },
   {
+    hooks: {
+      // Add 24 hours to the expiration date
+      beforeCreate: async (newPollsData) => {
+        let expDate = new Date(newPollsData.expiration_date);
+        newPollsData.expiration_date = expDate.setHours(
+          expDate.getHours() + 24
+        );
+        return newPollsData;
+      },
+    },
     sequelize,
     timestamps: false,
     freezeTableName: true,

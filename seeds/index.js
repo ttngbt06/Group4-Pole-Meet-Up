@@ -13,22 +13,22 @@ const seedAll = async () => {
   await sequelize.sync({ force: true });
   console.log('\n----- DATABASE SYNCED -----\n');
 
-  await Users.create(seedUsers);
+  await Users.bulkCreate(seedUsers, {individualHooks: true}); // Add hooks to allow them to execute on create
   console.log('\n----- USERS SEEDED -----\n');
 
-  await Categories.create(seedCategories);
+  await Categories.bulkCreate(seedCategories);
   console.log('\n----- CATEGORIES SEEDED -----\n');
 
-  await Polls.create(seedPolls);
+  await Polls.bulkCreate(seedPolls, {individualHooks: true}); // Add hooks to allow them to execute on create
   console.log('\n----- POLLS SEEDED -----\n');
 
-  await PollCategories.create(seedPollCategories);
+  await PollCategories.bulkCreate(seedPollCategories);
   console.log('\n----- POLL CATEGORIES SEEDED -----\n');
 
-  await Options.create(seedOptions);
+  await Options.bulkCreate(seedOptions);
   console.log('\n----- OPTIONS SEEDED -----\n');
 
-  await Votes.create(seedVotes);
+  await Votes.bulkCreate(seedVotes);
   console.log('\n----- VOTES SEEDED -----\n');
 
   process.exit(0);
