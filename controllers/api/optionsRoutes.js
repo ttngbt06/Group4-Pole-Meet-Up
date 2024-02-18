@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { Option, Category } = require('../../models');
+const { Options, Categories } = require('../../models');
 
 router.get('/', async (req, res) => {
     try {
-        const optionData = await Option.findAll({
-            include: [{model: Category}]
+        const optionsData = await Options.findAll({
+            include: [{model: Categories}]
         });
-        res.status(200).json(optionData)
+        res.status(200).json(optionsData)
     } catch (error) {
         res.status(500).json(error)
     }

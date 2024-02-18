@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { PollCategory, Poll, Category } = require('../../models');
+const { PollCategories, Polls, Categories } = require('../../models');
 
 router.get('/', async (req, res) => {
     try {
-        const pollCategoryData = await PollCategory.findAll({
-            include: [{model: Poll }, {model: Category}],
+        const pollCategoriesData = await PollCategories.findAll({
+            include: [{model: Polls }, {model: Categories}],
         });
-        res.status(200).json(pollCategoryData);
+        res.status(200).json(pollCategoriesData);
     } catch (error) {
         res.status(500).json(error)
     }

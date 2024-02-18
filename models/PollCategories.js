@@ -1,9 +1,9 @@
 const sequelize = require("../config/connection");
 const { Model, DataTypes } = require("sequelize");
 
-class PollsCategories extends Model {}
+class PollCategories extends Model {}
 
-PollsCategories.init(
+PollCategories.init(
   // Define files/columns on model
   {
     id: {
@@ -36,4 +36,4 @@ PollsCategories.init(
   }
 );
 
-module.exports = PollsCategories;
+module.exports = PollCategories;
