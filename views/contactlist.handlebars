@@ -1,0 +1,22 @@
+<div class="contact-container">
+  <div class="card-header col-md-12 text-center">
+    <h2>
+      &#127869 All Contacts
+    </h2>
+  </div>
+  {{#each users as |user|}}
+  <div class="poll col-md-4">
+    <p>
+      {{users.id}}.
+      {{users.users_name}}
+    </p>
+  </div>
+  {{!-- <div class="col-md-5">
+    <p>
+      User:
+      {{polls.user_id}}
+    </p>
+  </div> --}}
+  {{/each}}
+
+<script src="/js/add-dish.js"></script>

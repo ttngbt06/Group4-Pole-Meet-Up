@@ -1,0 +1,25 @@
+<div class="poll-container">
+  <div class="card-header col-md-12 text-center">
+    <h2>
+      &#127869 All Polls
+    </h2>
+  </div>
+  {{#each polls as |poll|}}
+  <div class="poll col-md-4">
+    <p>
+      {{polls.id}}.
+      {{polls.polls_title}}
+    </p>
+  </div>
+  <div class="col-md-5">
+    <p>
+      User:
+      {{polls.user_id}}
+    </p>
+  </div>
+  {{!-- <div class="col-md-3">
+    🥜: {{#if dish.has_nuts}} Contains nuts {{else}} No nuts {{/if}}
+  </div> --}}
+  {{/each}}
+
+<script src="/js/add-dish.js"></script>

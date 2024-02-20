@@ -1,0 +1,45 @@
+<div class="add-poll-container">
+    <h2>
+      Create a poll with things to do!
+    </h2>
+    <form class="new-poll-form">
+      <label for="poll_name">
+        Poll Name:
+      </label>
+      <br />
+      <textarea id="poll_name" name="poll_name" rows="2" cols="30">
+      {{polls_title}}
+    </textarea>
+      <br />
+      <label for="description">
+        Description:
+      </label>
+      <br />
+      <textarea id="description" name="description" rows="5" cols="30">
+      {{description}}
+    </textarea>
+      <br />
+      <label for="user_name">
+        User Name:
+      </label>
+      <br />
+      <textarea id="user_name" name="user_name" rows="2" cols="30">
+      {{user_id}}
+    </textarea>
+      {{!-- <br />
+      <br />
+      {{#if has_nuts}}
+      <input type="checkbox" id="has_nuts" name="has_nuts" checked />
+      {{else}}
+      <input type="checkbox" id="has_nuts" name="has_nuts" />
+      {{/if}}
+      <label for="has_nuts">
+        Check box if this dish contains nuts
+      </label>
+      <br /> --}}
+      <button type="submit" value="Submit">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

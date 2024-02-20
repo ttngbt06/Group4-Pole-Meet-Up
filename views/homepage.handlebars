@@ -20,8 +20,9 @@
   
   <div class="col-md-7">
     <p class="blog-content">{{polls.polls_description}}</p>
-      <p>Created by: {{polls.user.id}} on {{format_date polls.date_created}}</p>
+      <p>Created by: {{polls.users.id}} on {{format_date polls.date_created}}</p>
     </p>
   </div>
 </div>
 {{/each}}
+

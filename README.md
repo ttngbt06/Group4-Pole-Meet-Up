@@ -159,8 +159,9 @@ If you have any questions, or additional feedback, please feel free to email us 
 
 * Email -
 slhanson11@live.com,  
+zach.zsa.allen@gmail.com
 insert your emails   
-Martin, Toan, Zach
+Martin, Toan
 
 ## License 
 
