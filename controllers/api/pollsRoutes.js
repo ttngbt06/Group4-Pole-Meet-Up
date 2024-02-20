@@ -2,11 +2,27 @@ const router = require("express").Router();
 const { Polls, Options, PollCategories } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-router.get("/:id", withAuth, async (req, res) => {
-  console.log("get blog by id");
+router.get("/user/:id", withAuth, async (req, res) => {
+  console.log("get polls by user id");
   try {
-    const pollsData = await Polls.findAll(req.params.id, {
-      include: [{ model: Options }, { model: PollCategories }],
+    const pollsData = await Polls.findAll({ 
+      where: {user_id: req.params.id},
+      include: [{ all: true, nested: true }],
+    });
+
+    res.status(200).json(pollsData);
+  } catch (error) {
+    res.status(400).json(error);
+  }
+});
+
+router.get("/:id", withAuth, async (req, res) => {
+  console.log("get poll by id");
+  try {
+    const pollsData = await Polls.findByPk(req.params.id, {
+      // Include all associated models
+      // https://stackoverflow.com/questions/46614290/sequelize-eager-loading-error
+      include: [{ all: true, nested: true }],
     });
 
     const polls = pollsData.get({ plain: true });
@@ -34,12 +50,7 @@ router.post("/", withAuth, async (req, res) => {
 router.put("/:id", withAuth, async (req, res) => {
   try {
     console.log("polls update - " + req.params.id);
-    const updatedPolls = await Polls.update(
-      {
-        user_id: req.body.user_id,
-        title: req.body.post,
-        description: req.body.description,
-      },
+    const updatedPoll = await Polls.update(req.body, 
       {
         where: {
           id: req.params.id,
@@ -48,7 +59,7 @@ router.put("/:id", withAuth, async (req, res) => {
       }
     );
 
-    res.status(200).json(updatedPolls);
+    res.status(200).json(updatedPoll);
   } catch (error) {
     res.status(400).json(error);
   }
@@ -59,6 +70,7 @@ router.delete("/:id", async (req, res) => {
     const pollsData = await Polls.destroy({
       where: {
         id: req.params.id,
+        user_id: req.session.user_id,
       },
     });
     res.status(200).json(pollsData);

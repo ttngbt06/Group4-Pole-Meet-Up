@@ -3,6 +3,16 @@ const { Categories, Options, PollCategories, Polls, Users, Votes } = require('..
 //Import the custom middleware
 const withAuth = require('../utils/auth');
 
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  res.render('login');
+});
+
+
+// This must be last so other APIs are found first
 router.get('/', async (req, res) => {
   //console.log('test');
   try {
@@ -13,15 +23,6 @@ router.get('/', async (req, res) => {
     console.log('error!');
     res.status(500).json(err);
   }
-});
-
-
-router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-  res.render('login');
 });
 
 module.exports = router;
