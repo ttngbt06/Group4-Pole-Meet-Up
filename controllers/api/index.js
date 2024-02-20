@@ -14,4 +14,4 @@ router.use('/poll', pollRoutes);
 router.use('/user', userRoutes);
 router.use('/votes', votesRoutes);
 
-module.express = router;
+module.exports = router;
