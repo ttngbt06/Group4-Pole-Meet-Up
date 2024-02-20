@@ -9,7 +9,7 @@ const votesRoutes = require('./votesRoutes');
 
 router.use('/options', optionsRoutes);
 // router.use('/categories', categoriesRoutes);
-router.use('/pollCategories', pollCategoriesRoutes);
+// router.use('/pollCategories', pollCategoriesRoutes);
 router.use('/polls', pollsRoutes);
 router.use('/users', usersRoutes);
 router.use('/votes', votesRoutes);
