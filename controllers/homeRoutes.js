@@ -1,15 +1,27 @@
 const router = require('express').Router();
-const { }
+const { Categories, Options, PollCategories, Polls, Users, Votes } = require('../models');
 //Import the custom middleware
 const withAuth = require('../utils/auth');
 
-router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
+router.get('/', async (req, res) => {
+  //console.log('test');
+  try {
+    res.render('homepage', {
+      logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    console.log('error!');
+    res.status(500).json(err);
+  }
+});
 
-    res.render('login');
+
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  res.render('login');
 });
 
 module.exports = router;

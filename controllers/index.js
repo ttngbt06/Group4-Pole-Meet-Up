@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const socket = require("socket.io")
+const socket = require("socket.io");
 
 const apiRoutes = require('./api');
-const homeRoutes = require('./home-routes');
+const homeRoutes = require('./homeRoutes.js');
 
 
 router.use('/', homeRoutes);
