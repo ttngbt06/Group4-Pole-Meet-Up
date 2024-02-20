@@ -6,7 +6,7 @@ router.post("/", async (req, res) => {
     //console.log('test - userRoutes router.post');
     //console.log(req.body);
     const usersData = await Users.create({
-      username: req.body.name,
+      name: req.body.name,
       email: req.body.email,
       password: req.body.password,
     });
