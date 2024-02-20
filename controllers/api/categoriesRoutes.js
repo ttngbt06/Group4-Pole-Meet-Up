@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { Category } = require('../../models');
+const { Categories } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
     try {
-        categoryData = await Category.findAll();
-        res.status(200).json(categoryData)
+        const categoriesData = await Categories.findAll();
+        res.status(200).json(categoriesData)
     } catch (error) {
         res.status(500).json(error)
     }
