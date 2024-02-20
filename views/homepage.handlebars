@@ -1,3 +1,27 @@
-{{#each galleries as |gallery|}}
+{{!-- {{#each galleries as |gallery|}}
 {{> gallery-details}}
+{{/each}} --}}
+
+{{#each polls as |poll| }}
+<div class="row mb-4 blog">
+  <div class="col-md-5">
+    <h2>
+      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+      {{{get_emoji}}}
+      <a href="/polls/{{polls.id}}">{{polls.title}}</a>
+    </h2>
+    <p>
+      <span for="img" aria-label="money">💲</span>
+      <!-- Pass funding value to the helper function -->
+      <span class="dollar-amount">{{format_amount blog.funding}}</span>
+      needed!
+    </p>
+  </div>
+  
+  <div class="col-md-7">
+    <p class="blog-content">{{polls.polls_description}}</p>
+      <p>Created by: {{polls.user.id}} on {{format_date polls.date_created}}</p>
+    </p>
+  </div>
+</div>
 {{/each}}
