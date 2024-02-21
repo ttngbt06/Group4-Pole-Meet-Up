@@ -1,21 +1,27 @@
 const router = require('express').Router();
-const { Votes, Users, Options } = require('../../models');
+const { Votes, Polls, Options } = require('../../models');
+const withAuth = require("../../utils/auth");
 
-router.get('/', async (req, res) => {
-    try {
-        const votesData = await Vote.findAll({
-            indlue: [{model: User}, {model: Option}]
-        });
-        res.status(200).json(votesData)
-    } catch (error) {
-        res.status(500).json(error)
-    }
-});
 
-router.post('/', async (req, res) => {
+// We are already "getting" this information from get poll by id
+    // I do not believe we are going to need this "get"
+
+// router.get('/:id', withAuth, async (req, res) => {
+//     try {
+//         const votesData = await Votes.findAll({
+//             where: { poll_id: req.params.id },
+//             include: [{ all: true, nested: true }],
+//         });
+//         res.status(200).json(votesData)
+//     } catch (error) {
+//         res.status(500).json(error)
+//     }
+// });
+
+router.post('/', withAuth,  async (req, res) => {
     try {
-        const votesData = await Vote.create({
-            vote_name: req.body.option_name,
+        const votesData = await Votes.create({
+            vote_name: req.body.options_name,
         });
         res.status(200).json(votesData)
     } catch (error) {
@@ -23,17 +29,20 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.delete('/:id', async (req, res) => {
-    try {
-        const votesData = await Vote.destroy({
-            where: {
-                id: req.params.id,
-            },
-        });
-        res.status(200).json(votesData);
-    } catch (error) {
-        res.status(500).json(error);
-    }
-});
+
+// We should not need to delete votes, but in case we want to add it
+
+// router.delete('/:id', async (req, res) => {
+//     try {
+//         const votesData = await Vote.destroy({
+//             where: {
+//                 id: req.params.id,
+//             },
+//         });
+//         res.status(200).json(votesData);
+//     } catch (error) {
+//         res.status(500).json(error);
+//     }
+// });
 
 module.exports = router;
