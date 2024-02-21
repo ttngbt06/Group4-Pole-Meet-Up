@@ -21,7 +21,8 @@ const withAuth = require("../../utils/auth");
 router.post('/', withAuth,  async (req, res) => {
     try {
         const votesData = await Votes.create({
-            vote_name: req.body.options_name,
+            option_id: req.body.option_id,
+            user_id: req.body.user_id,
         });
         res.status(200).json(votesData)
     } catch (error) {
