@@ -1,47 +1,37 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <link rel="stylesheet" href="/style/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        {{{title}}}
-        <link rel="shortcut icon" href="/img/" type="image/x-icon">
-    </head>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Museum</title>
+  <link rel="stylesheet" type="text/css" href="/css/jass.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
 <body>
-    <header>
-        <img src="https://ambitionx.io.vn/login.png" alt="Logo" class="logo" width="5%"> 
-        <nav>
-            <a href="/">Dashboard</a>
-            {{#if session.userid}}
-                <a href="/posts/dashboard">Post</a>
-                <a href="/pool">Poll</a>
-                <a href="/logout">Logout</a>
-            {{else}}
-                <a href="/login">Login</a>
-                <a href="/register">Register</a>
-                <a href="/pool">Poll</a>
-            {{/if}}
-        </nav>
-    </header>
-    <main>
-        {{#if messages.message}}
-            <div class="flash">
-                {{messages.message}}
-            </div>
-        {{/if}}
-        {{{body}}}
-    </main>
-    <footer>
-        <nav>
-            <a href="/">Dashboard</a>
-            {{#if session.userid}}
-                <a href="/posts/dashboard">Post</a>
-                <a href="/logout">Logout</a>
-            {{else}}
-                <a href="/login">Login</a>
-                <a href="/register">Register</a>
-            {{/if}}
-        </nav>
-    </footer>
+  <header>
+    <h1>Welcome to the Four Seasons Museum</h1>
+  </header>
+  <nav>
+    <a href="/">Home</a>
+    {{#if loggedIn}}
+    <button id="logout" class="btn-no-style">Logout</button>
+    {{else}}
+    <a href="/login">Login</a>
+    {{/if}}
+  </nav>
+  <main>
+    <aside>
+      <h2>Enjoy the galleries!</h2>
+    </aside>
+    <div class="gallery">
+      {{{body}}}
+    </div>
+  </main>
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
+
 </html>
