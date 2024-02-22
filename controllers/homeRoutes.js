@@ -30,6 +30,11 @@ router.get("/", async (req, res) => {
   });
   // Serialize data so the template can read it
   const polls = pollData.map((poll) => poll.get());
+      res.render("homepage", {
+      polls: polls,
+      logged_in: req.session.logged_in,
+    });
+
 });
   //console.log('test');
 
