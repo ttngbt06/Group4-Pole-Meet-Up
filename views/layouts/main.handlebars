@@ -1,37 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Museum</title>
-  <link rel="stylesheet" type="text/css" href="/css/jass.css">
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup Page</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <header>
-    <h1>Welcome to the Four Seasons Museum</h1>
-  </header>
-  <nav>
-    <a href="/">Home</a>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
-  </nav>
-  <main>
-    <aside>
-      <h2>Enjoy the galleries!</h2>
-    </aside>
-    <div class="gallery">
-      {{{body}}}
+    <div class="container">
+        <div class="glass_effect_container" id="glass_container">
+            <div class="logo" id="logo">
+                <img src="logo.jpg" alt="@bliss_dev_">
+            </div>
+            <div class="signin" id="signin">
+                <div class="signin_container">
+                    <div class="username_input">
+                        <input type="text" name="email" id="username" required pattern="^\s?(?=\S).*">
+                        <label for="email">
+                            <span class="email__username">E-mail</span>
+                        </label>
+                    </div>
+                    <div class="password_input">
+                        <input type="password" name="password" id="password" required>
+                        <label for="password">
+                            <span class="password">password</span>
+                        </label>
+                    </div>
+                    <form action="/login" method="POST"> <!-- Adjust form action according to your server endpoint -->
+                        <button class="button" type="submit">
+                            <span class="button__text">Login</span>
+                            <!-- Arrow svg inside button-->
+                            <svg class="button__arrow" width="24" height="8" viewBox="0 0 24 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.1716 0.46444L23.3536 3.64642C23.5488 3.84168 23.5488 4.15826 23.3536 4.35353L20.1716 7.53551C19.9763 7.73077 19.6597 7.73077 19.4645 7.53551C19.2692 7.34025 19.2692 7.02366 19.4645 6.8284L21.7929 4.49997H0L0 3.49997H21.7929L19.4645 1.17155C19.2692 0.976284 19.2692 0.659702 19.4645 0.46444C19.6597 0.269178 19.9763 0.269178 20.1716 0.46444Z" fill="black"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                <div class="signup_page_link">
+                    Don't have an account?
+                    <a class="go_to_signup_page" onclick="rotate()" href="#">Sign up</a>.
+                </div>
+            </div>
+            <div class="signup" id="signup">
+                <div class="signup_container">
+                    <div class="username_input">
+                        <input type="text" name="name" id="username_register" required pattern="^\s?(?=\S).*">
+                        <label for="name">
+                            <span class="email__username">Enter your full name</span>
+                        </label>
+                    </div>
+                    <div class="email_input">
+                        <input type="email" name="email" id="email" required pattern="^\s?(?=\S).*">
+                        <label for="email">
+                            <span class="email__username">Enter your Email</span>
+                        </label>
+                    </div>
+                    <div class="password_input">
+                        <input type="password" name="password" id="password" required>
+                        <label for="password">
+                            <span class="password">password</span>
+                        </label>
+                    </div>
+                    <form action="/signup" method="POST"> <!-- Adjust form action according to your server endpoint -->
+                        <button class="button button2" type="submit">
+                            <span class="button__text">Sign up</span>
+                            <!-- Arrow svg for button -->
+                            <svg class="button__arrow" width="24" height="8" viewBox="0 0 24 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.1716 0.46444L23.3536 3.64642C23.5488 3.84168 23.5488 4.15826 23.3536 4.35353L20.1716 7.53551C19.9763 7.73077 19.6597 7.73077 19.4645 7.53551C19.2692 7.34025 19.2692 7.02366 19.4645 6.8284L21.7929 4.49997H0L0 3.49997H21.7929L19.4645 1.17155C19.2692 0.976284 19.2692 0.659702 19.4645 0.46444C19.6597 0.269178 19.9763 0.269178 20.1716 0.46444Z" fill="black"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                <div class="signin_page_link">
+                    Already have an account?
+                    <a class="go_to_signin_page" onclick="rotate()" href="#">Sign in</a>.
+                </div>
+            </div>
+        </div>
     </div>
-  </main>
-  {{#if loggedIn}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
-
-</html>
+    <!-- wave svgs -->
+    <!-- Wave svg 1 -->
+    <svg class="wave1" viewBox="0 0 1353 377" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 377L48 341.095C96 305.19 192 233.381 288 170.548C384 107.714 480 53.8571 576 53.8571C672 53.8571 768 107.714 864 125.667C960 143.619 1056 125.667 1152 98.7381C1248 71.8095 1344 35.9048 1392 17.9524L1440 0V377H1392C1344 377 1248 377 1152 377C1056 377 960 377 864 377C768 377 672 377 576 377C480 377 384 377 288 377C192 377 96 377 48 
