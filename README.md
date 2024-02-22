@@ -29,8 +29,6 @@ by Martin, Zach, Toan and Sheila ![Github license](https://img.shields.io/badge/
     -  npm install MySQL  
     -  npm install MySQL2  
     -  npm install Node.js  
- - Insomnia
-   - Used for testing
   
   ### User Story
 - AS A developer with various social circles    
@@ -95,20 +93,19 @@ by Martin, Zach, Toan and Sheila ![Github license](https://img.shields.io/badge/
       -  Then open in an integrated terminal and type the following commands in  
            -  mysql -u root -p  
            -  password - [enter your password]  
-           -  source schema.sql  
+           -  source db/schema.sql  
            -  quit (this is going to end the sql shell = Bye)  
-   ![alt text](public/assets/img/database.png) UPDATE
+            ![alt text](assets/imgs/mysql.png)
 - Run seeds
   - JS server.js - right click server.js
       - Then open in an integrated terminal and type the follow commands in  
           - npm i (run to make sure all the dependencies are installed before you begin)
           - npm run seed  
-      - Starting the server - type the following below in the command line
-          - npm run watch  
-           - response on last line = Now Listening
-  ![alt text](public/assets/img/seeds.png)  UPDATE
-  ![alt text](public/assets/img/seeds2.png)  UPDDATE  
-- Insomnia - testing will be done using Insomnia
+              ![alt text](assets/imgs/seeds.png)
+      - Starting the server 
+          - npm start
+           - response on last line = Now Listening  
+              ![alt text](<assets/imgs/npm start.png>)
 
  - Database Model Diagram  
 ![alt text](assets/imgs/ERD.png)
@@ -147,7 +144,11 @@ by Martin, Zach, Toan and Sheila ![Github license](https://img.shields.io/badge/
 U of M teachers and materials from bootcamp
 
 ## Testing
+ - Insomnia and MySQL Workbench 
+    -  Used for testing  
+    ![  ](assets/imgs/insomnia.png)  
 
+        ![alt text](<assets/imgs/mywork bench.png>)
 
 
 ## Questions
