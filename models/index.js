@@ -1,9 +1,9 @@
-const Categories = require("./categories");
-const Users = require("./users");
-const PollCategories = require("./pollCategories");
-const Polls = require("./polls");
-const Options = require("./options");
-const Votes = require("./votes");
+const Categories = require("./Categories");
+const Users = require("./Users");
+const PollCategories = require("./PollCategories");
+const Polls = require("./Polls");
+const Options = require("./Options");
+const Votes = require("./Votes");
 
 // Polls belongsToMany Categories through PollCategories
 Polls.belongsToMany(Categories, {
