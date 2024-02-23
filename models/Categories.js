@@ -2,7 +2,7 @@ const sequelize = require("../config/connection");
 const { Model, DataTypes } = require("sequelize");
 
 class Categories extends Model {}
-//adsfadsfadsfadf
+
 Categories.init(
   // Define fields/columns on model
   {
