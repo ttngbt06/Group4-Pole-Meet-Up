@@ -34,13 +34,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(routes);
 
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () =>
-    console.log(`Now listening on PORT http://localhost:${PORT}`)
-  );
-});
-
-// Socket logic - https://socket.io/get-started/chat
 const http = require("http");
 const server = http.createServer(app);
 const { Server } = require("socket.io");
@@ -48,7 +41,34 @@ const io = new Server(server);
 
 io.on("connection", (socket) => {
   console.log("a user connected");
+
+let totalVotes = 0;
+  let votingPolls = {
+    TapHouse: 0,
+    BuffaloWildWings: 0,
+    FogodeChao: 0,
+    TinnersPublicHouse: 0,
+  };
+
+  // const io = require('socket.io')(8000, {cors: {origin: "*"}});
+  socket.on("send-vote", (voteTo) => {
+    // console.log("TEST 1");
+    // console.log(voteTo);
+    // TODO Save the vote?
+    //socket.broadcast.emit("receive-vote", { voteTo });
+    totalVotes += 1;
+    console.log(voteTo);
+    votingPolls[voteTo] += 1;
+    socket.broadcast.emit("receive-vote", { votingPolls, totalVotes });
+    socket.emit("update", { votingPolls, totalVotes });
+  });
+
+  // Send Current Data of votes to user when visited the site
+  socket.emit("update", { votingPolls, totalVotes });
 });
-server.listen(3000, () => {
-  console.log("listening on *:3000");
+
+sequelize.sync({ force: false }).then(() => {
+  server.listen(PORT, () => {
+    console.log(`Now listening on PORT http://localhost:${PORT}`);
+  });
 });
