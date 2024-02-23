@@ -1,3 +1,7 @@
-{{#each galleries as |gallery|}}
-{{> gallery-details}}
+{{#each polls as |poll|}}
+<a href="/poll/{{poll.id}}">
+    <header>{{poll.title}}</header>
+    <p>Created By {{poll.user.name}}</p>
+    <p>Expires On {{poll.expiration_date}}</p>
+  </a>
 {{/each}}

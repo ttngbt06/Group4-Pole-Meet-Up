@@ -29,9 +29,42 @@ router.get("/", async (req, res) => {
     ],
   });
   // Serialize data so the template can read it
-  const polls = pollData.map((poll) => poll.get());
+  const polls = pollData.map((poll) => poll.get({plain:true}));
       res.render("homepage", {
-      polls: polls,
+      polls,
+      logged_in: req.session.logged_in,
+    });
+
+});
+router.get("/option", async (req, res) => {
+  // Get all options, JOIN polls, and include poll user
+  const optionsData = await Options.findAll({
+    include: [
+      {
+        model: Polls,
+        include: [{model: Users, attributes: ["name"]}]
+      },
+    ],
+  });
+  // Serialize data so the template can read it
+  const options = optionsData.map((poll) => poll.get({plain:true}));
+      console.log(options)
+      res.render("browse", {
+      options,
+      logged_in: req.session.logged_in,
+    });
+
+});
+
+router.get("/poll/:id", async (req, res) => {
+  // Get all options, JOIN polls, and include poll user
+  const pollData = await Polls.findByPk(req.params.id, {
+        include: [{model: Users, attributes: ["name"]}]
+  });
+  // Serialize data so the template can read it
+  const poll = pollData.get({plain:true})
+      res.render("poll", {
+      poll,
       logged_in: req.session.logged_in,
     });
 
