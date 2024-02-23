@@ -1,6 +1,6 @@
 const Categories = require("./Categories");
 const Users = require("./Users");
-const PollCategories = require("./pollCategories");
+const PollCategories = require("./PollCategories");
 const Polls = require("./Polls");
 const Options = require("./Options");
 const Votes = require("./Votes");
