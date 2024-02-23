@@ -1,38 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="uft-8">
-  <meta name="viewport" content-width="device-width", initial-scale=1.0>
-  <title>Polls</title>
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="stylesheet" href="/css/jass.css">
-</head>
-<body>
-  <header>
-    <h1>Welcome to Polls</h1>
-  </header>
-  <nav>
-    <a href="/">Home</a>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
-  </nav>
-  <main>
-    <aside>
-      <h2>Poll your friends and family</h2>
-    </aside>
-    <div class="galery">
-      {{{body}}}
-    </div>
-    <!-- wave svgs -->
-    <!-- Wave svg 1 -->
-    <svg
-      class="wave1"
-      viewBox="0 0 1353 377"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    ></svg>
-  </main>
-</body>
+  <head>
+    <title>Polls</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/jass.css">
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to Polls Meet-Up</h1>
+    </header>
+    <nav>
+      <a href="/">Home</a>
+      {{#if loggedIn}}
+      <button id="logout" class="btn-no-style">Logout</button>
+      {{else}}
+      <a href="/login">Login</a>
+      <a href="/signup" id="signup"><button>Sign Up</button></a>
+      {{/if}}
+    </nav>
+    <main>
+        {{{body}}}
+    </main>
+  </body>
+</html>
