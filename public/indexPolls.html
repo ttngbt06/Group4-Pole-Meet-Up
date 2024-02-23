@@ -5,31 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Polling App</title>
-    <link rel="stylesheet" type="text/css" href="./public/css/stylespolls.css" />
-    <!--<script defer src="https://voting-app-server-57ji.onrender.com/socket.io/socket.io.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="/css/stylespolls.css" />
   </head>
   <body>
     <div class="container">
       <h2>Your Favorite</h2>
-      <div class="progress-box" id="html">
+      <div class="progress-box" id="TapHouse">
         <p>Tap House</p>
         <div class="progress-bar">
           <span data="0%" class="percent-tag"></span>
         </div>
       </div>
-      <div class="progress-box" id="Buffalo Wild Wings">
+      <div class="progress-box" id="BuffaloWildWings">
         <p>Buffalo Wild Wings</p>
         <div class="progress-bar">
           <span data="0%" class="percent-tag"></span>
         </div>
       </div>
-      <div class="progress-box" id="Fogo de Chao">
+      <div class="progress-box" id="FogodeChao">
         <p>Fogo de Chao</p>
         <div class="progress-bar">
           <span data="0%" class="percent-tag"></span>
         </div>
       </div>
-      <div class="progress-box" id="Tinners Public House">
+      <div class="progress-box" id="TinnersPublicHouse">
         <p>Tinners Public House</p>
         <div class="progress-bar">
           <span data="0%" class="percent-tag"></span>
@@ -37,9 +36,7 @@
       </div>
       <h3>Total Votes : <span id="totalVotes"></span></h3>
     </div>
-    <script src="./node_modules/socket.io/client-dist/socket.io.js"></script>
-    <script>
-      var socket = io();
-    </script>
+    <script src="https://cdn.socket.io/4.7.4/socket.io.min.js" integrity="sha384-Gr6Lu2Ajx28mzwyVR8CFkULdCU7kMlZ9UthllibdOSo6qAiN+yXNHqtgdTvFXMT4" crossorigin="anonymous"></script>
+    <script src="js/scriptPolls.js"></script>
   </body>
 </html>

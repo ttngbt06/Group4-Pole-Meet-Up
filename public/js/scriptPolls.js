@@ -1,50 +1,59 @@
-// Verify same server as indexPolls.html 
+// Verify same server as indexPolls.html
 const socket = io();
+// client-side
+socket.on("connect", () => {
+  console.log(socket.id); // x8WIv7-mJelg7on_ALbx
+});
 
 const progressBoxes = document.querySelectorAll(".progress-box");
-const percentTags = document.querySelectorAll('.percent-tag');
-const totalVotesElem = document.getElementById('totalVotes');
+const percentTags = document.querySelectorAll(".percent-tag");
+const totalVotesElem = document.getElementById("totalVotes");
 
 for (let i = 0; i < progressBoxes.length; i++) {
   const elem = progressBoxes[i];
   elem.addEventListener("click", () => {
+    console.log('add vote');
     addVote(elem, elem.id);
   });
 }
 
-
 let vote = false;
-
-const addVote = (elem,id)=>{
+  
+const addVote = (elem, id) => {
   if (vote) {
-    return
+    return;
   }
   let voteTo = id;
-  socket.emit('send-vote',voteTo);
+  socket.emit("send-vote", voteTo);
+  // console.log(socket);
   vote = true;
-  elem.classlist.add('active');
-}
+  elem.classList?.add("active");
+};
 
-socket.on('receive-vote',data =>{
-  updatePolls(data)
-})
-
-socket.on('update',data =>{
-  updatePolls(data)
-  console.log(data);
-})
-
-const updatePolls = (data)=>{
-  let votingObject = data.votingPolls;
+const updatePolls = (data) => {
+let votingObject = data.votingPolls;
   let totalVotes = data.totalVotes;
-  totalVotesElem.innerHTML = totalVotes
+  totalVotesElem.innerHTML = totalVotes;
   for (let i = 0; i < percentTags.length; i++) {
     let vote = votingObject[progressBoxes[i].id];
-    let setWidth = Math.round(vote / totalVotes * 100);
-    const elem = document.querySelector(`#${progressBoxes[i].id}`)
-    .querySelector('percent-tag');
-    elem.setAttribute('data',`${!setWidth? 0: setWidth}%`);
-    elem.style.width = `${!setWidth? 0: setWidth}%`
-    console.log(elem);
+    let setWidth = Math.round((vote / totalVotes) * 100);
+    let widthString = (!setWidth ? 0 : setWidth) + "%";
+    let currentId = progressBoxes[i].id;
+    const elem = document.getElementById(currentId).querySelector(".percent-tag");
+    // console.log(elem);
+    elem.setAttribute("data", widthString);
+    elem.style.width = widthString;
+    // console.log(elem);
   }
-}
+};
+
+socket.on("receive-vote", (data) => {
+  // console.log(data);
+  updatePolls(data);
+});
+
+socket.on("update", (data) => {
+  updatePolls(data);
+  // console.log(data);
+});
+
