@@ -10,16 +10,18 @@
       <h1>Welcome to Polls Meet-Up</h1>
     </header>
     <nav>
-      <a href="/">Home</a>
-      {{#if loggedIn}}
+      <a href="/"><button>Home</button></a>
+      {{#if logged_in}}
       <button id="logout" class="btn-no-style">Logout</button>
       {{else}}
-      <a href="/login">Login</a>
+      <a href="/login"><button>Login</button></a>
       <a href="/signup" id="signup"><button>Sign Up</button></a>
       {{/if}}
     </nav>
+    <hr>
     <main>
         {{{body}}}
     </main>
+    <script src="/js/logout.js"></script>
   </body>
 </html>
