@@ -7,3 +7,6 @@ header {
 nav {
     
 }
+#top-div {
+    display: flex;
+}
