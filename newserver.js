@@ -42,29 +42,24 @@ const io = new Server(server);
 
 io.on("connection", (socket) => {
   console.log("a user connected");
-
-let totalVotes = 0;
-  let votingPolls = {
-    TapHouse: 0,
-    BuffaloWildWings: 0,
-    FogodeChao: 0,
-    TinnersPublicHouse: 0,
-  };
-
-  socket.on("send-vote", (voteTo) => {
-    // console.log("TEST 1");
-    // console.log(voteTo);
-    // TODO Save the vote?
-    //socket.broadcast.emit("receive-vote", { voteTo });
-    totalVotes += 1;
-    console.log(voteTo);
-    votingPolls[voteTo] += 1;
-    socket.broadcast.emit("receive-vote", { votingPolls, totalVotes });
-    socket.emit("update", { votingPolls, totalVotes });
-  });
+  console.log("SERVER SOCKET CONNECTED " + socket.id);
 
   // Send Current Data of votes to user when visited the site
-  socket.emit("update", { votingPolls, totalVotes });
+  // Send "update" event to the client
+  socket.emit("update");
+  // Receive the "send-vote" event from the client
+  socket.on("send-vote", async (voteTo) => {
+    console.log("on send-vote");
+    // console.log(voteTo);
+    console.log(socket.id);
+    // Send "receive-vote" event to the client
+    io.emit("receive-vote", { voteTo });
+    // totalVotes += 1;
+    console.log(voteTo);
+    // votingPolls[voteTo] += 1;
+    //socket.broadcast.emit("receive-vote", { votingPolls, totalVotes });
+    //io.emit("update", { votingPolls, totalVotes });
+  });
 });
 
 sequelize.sync({ force: false }).then(() => {

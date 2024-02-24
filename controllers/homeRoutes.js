@@ -10,7 +10,7 @@ const {
 //Import the custom middleware
 const withAuth = require("../utils/auth");
 const { Sequelize } = require("sequelize");
-const Op = Sequelize.Op //https://sequelize.org/v5/manual/querying.html
+const Op = Sequelize.Op; //https://sequelize.org/v5/manual/querying.html
 
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
@@ -28,33 +28,40 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-
 //Routes for additional pages when user is logged in:
-router.get('/createpoll', withAuth, (req, res) => {
-  res.render('createpoll', {
-    logged_in: req.session.logged_in
-  });
-});
-router.get('/pollhistory', withAuth, (req, res) => {
-  res.render('pollhistory', {
-    logged_in: req.session.logged_in
-  });
-});
-router.get('/browse', withAuth, (req, res) => {
-  res.render('browse', {
-    logged_in: req.session.logged_in
-  });
-});
-router.get('/contactlist', withAuth, (req, res) => {
-  res.render('contactlist', {
-    logged_in: req.session.logged_in
+router.get("/createpoll", withAuth, (req, res) => {
+  res.render("createpoll", {
+    logged_in: req.session.logged_in,
   });
 });
 
+router.get("/browse", withAuth, async (req, res) => {
+  const pollData = await Polls.findAll({
+    // Expiration date is greater than now (not expired)
+    where: { expiration_date: { [Op.gt]: new Date() } },
+    include: [
+      {
+        model: Users,
+      },
+    ],
+  });
+  const polls = pollData.map((poll) => poll.get());
+  res.render("browse", {
+    polls: polls,
+    logged_in: req.session.logged_in,
+  });
+});
+
+router.get("/contactlist", withAuth, (req, res) => {
+  res.render("contactlist", {
+    logged_in: req.session.logged_in,
+  });
+});
 
 router.get("/pollhistory", async (req, res) => {
   if (req.session.logged_in) {
     const pollData = await Polls.findAll({
+      // Expiration date is less than now (expired)
       where: { expiration_date: { [Op.lte]: new Date() } },
       include: [
         {
@@ -69,10 +76,29 @@ router.get("/pollhistory", async (req, res) => {
       polls: polls,
       logged_in: req.session.logged_in,
     });
-    console.log(polls);
+    //console.log(polls);
     return;
   }
   res.render("login");
+});
+
+// Get a poll by ID
+// Render it in the poll handlebars
+router.get('/poll/:id', async (req, res) => {
+  console.log('get poll by id');
+  try {
+    const pollData = await Polls.findByPk(req.params.id, {
+      include: [{ all: true, nested: true }],
+    });
+    const poll = pollData.get({ plain: true });
+    res.render('poll', {
+      poll: poll,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 // This must be last so other APIs are found first

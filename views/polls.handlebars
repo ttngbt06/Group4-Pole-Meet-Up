@@ -1,6 +1,0 @@
-<h1>Active Polls</h1>
-{{#each polls as |poll|}}
-<h4><a href="/polls/{{poll.id}}">{{poll.title}}</a></h4>
-<p>{{poll.description}}</p>
-<p>Created by: {{poll.user.dataValues.name}} on {{format_time poll.date_created}} (expires {{format_time poll.expiration_date}})</p>
-{{/each}}
