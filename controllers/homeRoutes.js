@@ -9,7 +9,7 @@ const {
 } = require("../models");
 //Import the custom middleware
 const withAuth = require("../utils/auth");
-const { Sequelize} = require("sequelize");
+const { Sequelize } = require("sequelize");
 const Op = Sequelize.Op //https://sequelize.org/v5/manual/querying.html
 
 router.get("/login", (req, res) => {
@@ -51,40 +51,11 @@ router.get('/contactlist', withAuth, (req, res) => {
   });
 });
 
-// This must be last so other APIs are found first
-router.get("/", async (req, res) => {
-  // Get all polls and JOIN with user data
-  const pollData = await Polls.findAll({
-    include: [
-      {
-        model: Users,
-      },
-    ],
-  });
-  // Serialize data so the template can read it
-  const polls = pollData.map((poll) => poll.get());
-      res.render("homepage", {
-      polls: polls,
-      logged_in: req.session.logged_in,
-
-    });
-    //console.log(pollData);
-    // Serialize data so the template can read it
-    const polls = pollData.map((poll) => poll.get());
-        res.render("polls", {
-        polls: polls,
-        logged_in: req.session.logged_in,
-      });
-      console.log(polls);
-      return;
-  }
-  res.render("login");
-});
 
 router.get("/pollhistory", async (req, res) => {
   if (req.session.logged_in) {
     const pollData = await Polls.findAll({
-      where: { expiration_date : { [Op.lte]:  new Date() } },
+      where: { expiration_date: { [Op.lte]: new Date() } },
       include: [
         {
           model: Users,
@@ -94,12 +65,12 @@ router.get("/pollhistory", async (req, res) => {
     //console.log(pollData);
     // Serialize data so the template can read it
     const polls = pollData.map((poll) => poll.get());
-        res.render("pollhistory", {
-        polls: polls,
-        logged_in: req.session.logged_in,
-      });
-      console.log(polls);
-      return;
+    res.render("pollhistory", {
+      polls: polls,
+      logged_in: req.session.logged_in,
+    });
+    console.log(polls);
+    return;
   }
   res.render("login");
 });
