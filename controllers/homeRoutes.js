@@ -28,16 +28,45 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-router.get("/polls", async (req, res) => {
-  console.log(new Date());
-  if (req.session.logged_in) {
-    const pollData = await Polls.findAll({
-      where: { expiration_date : { [Op.gt]:  new Date() } },
-      include: [
-        {
-          model: Users,
-        },
-      ],
+
+//Routes for additional pages when user is logged in:
+router.get('/createpoll', withAuth, (req, res) => {
+  res.render('createpoll', {
+    logged_in: req.session.logged_in
+  });
+});
+router.get('/pollhistory', withAuth, (req, res) => {
+  res.render('pollhistory', {
+    logged_in: req.session.logged_in
+  });
+});
+router.get('/browse', withAuth, (req, res) => {
+  res.render('browse', {
+    logged_in: req.session.logged_in
+  });
+});
+router.get('/contactlist', withAuth, (req, res) => {
+  res.render('contactlist', {
+    logged_in: req.session.logged_in
+  });
+});
+
+// This must be last so other APIs are found first
+router.get("/", async (req, res) => {
+  // Get all polls and JOIN with user data
+  const pollData = await Polls.findAll({
+    include: [
+      {
+        model: Users,
+      },
+    ],
+  });
+  // Serialize data so the template can read it
+  const polls = pollData.map((poll) => poll.get());
+      res.render("homepage", {
+      polls: polls,
+      logged_in: req.session.logged_in,
+
     });
     //console.log(pollData);
     // Serialize data so the template can read it
