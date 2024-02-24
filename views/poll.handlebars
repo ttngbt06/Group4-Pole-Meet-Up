@@ -1,0 +1,31 @@
+<div id="poll" data="{{poll.id}}">
+  <h4>{{poll.title}}</h4>
+  <p>Created by:
+    {{poll.user.name}}
+    on
+    {{format_time poll.date_created}}
+    (expires
+    <span id="expiration" data="{{poll.expiration_date}}"">{{format_time poll.expiration_date}})</span></p>
+  <p>{{poll.description}}</p>
+
+  <div class="container">
+    {{#each poll.options as |option|}}
+      <div class="progress-box" id="{{option.id}}">
+        <p>{{option.name}}</p>
+        <div class="progress-bar">
+          <span data="0%" class="percent-tag"></span>
+        </div>
+      </div>
+
+    {{/each}}
+  </div>
+
+  <h3>Total Votes : <span id="totalVotes"></span></h3>
+</div>
+
+<script
+  src="https://cdn.socket.io/4.7.4/socket.io.min.js"
+  integrity="sha384-Gr6Lu2Ajx28mzwyVR8CFkULdCU7kMlZ9UthllibdOSo6qAiN+yXNHqtgdTvFXMT4"
+  crossorigin="anonymous"
+></script>
+<script src="/js/scriptPolls.js"></script>
