@@ -2,15 +2,16 @@
 by Martin, Zach, Toan and Sheila ![Github license](https://img.shields.io/badge/license-MIT-blue.svg)  
  ![alt text])  insert logo here
 ## Description <!-- omit from toc -->
-
-
+This is a interactive and mobile responsive site to assist you and your friends with deciding where to meet up. Logged in users can create a poll(s) with suggestion and the group can vote on their preferred choice.  Logged in users can also view past polls, create polls, and vote.   
 ## Table of Contents <!-- omit from toc -->
   
 - [Installation](#installation)
   - [User Story](#user-story)
   - [Acceptance Criteria](#acceptance-criteria)
 - [Usage](#usage)
+- [Database Model Diagram](#database-model-diagram)
 - [Wireframe](#wireframe)
+- [View of homepage](#view-of-homepage)
 - [Features](#features)
 - [Challenges](#challenges)
 - [Contributing](#contributing)
@@ -108,12 +109,17 @@ by Martin, Zach, Toan and Sheila ![Github license](https://img.shields.io/badge/
            - response on last line = Now Listening  
               ![alt text](<assets/imgs/npm start.png>)
 
- - Database Model Diagram  
-![alt text](assets/imgs/ERD.png)
+## Database Model Diagram  
+  ![alt text](assets/imgs/ERD.png)
   
 ## Wireframe    
-- Laying out the group ideas on the first day
-![alt text](assets/imgs/wireframe.png)
+- Laying out the group ideas on the first day  
+  
+  ![alt text](assets/imgs/wireframe.png)  
+
+## View of homepage  
+  ****ADD IMAGE OF HOMEPAGE HERE****
+
 
 ## Features
   - Using socket.io
@@ -142,13 +148,14 @@ by Martin, Zach, Toan and Sheila ![Github license](https://img.shields.io/badge/
 [cdnjs](https://cdnjs.com/libraries)
 [socket.io](https://socket.io/blog/socket-io-3-release/)  
 [handlebars](https://handlebarsjs.com/)  
-U of M teachers and materials from bootcamp
+U of M teachers and materials from bootcamp  
 
 ## Testing
- - Insomnia and MySQL Workbench 
-    -  Used for testing  
+-  2 programs below were used for testing  
+  
+    - Insomnia  
     ![  ](assets/imgs/insomnia.png)  
-
+    - MySQL Workbench  
         ![alt text](<assets/imgs/mywork bench.png>)
 
 
@@ -157,12 +164,20 @@ U of M teachers and materials from bootcamp
 If you have any questions, or additional feedback, please feel free to email us and we will respond as soon as possible.
     
 * Github -
-[https://github.com/ttngbt06/Group4-Pole-Meet-Up.git](https://github.com/ttngbt06/Group4-Pole-Meet-Up.git)
+[https://github.com/ttngbt06/Group4-Pole-Meet-Up.git](https://github.com/ttngbt06/Group4-Pole-Meet-Up.git)  
 
-* Email -
-slhanson11@live.com,  
-insert your emails   
-Martin, Toan, Zach
+* Heroku -  
+  [https://poll-meetup-e1093fdd4126.herokuapp.com/](https://poll-meetup-e1093fdd4126.herokuapp.com/)
+
+* Email the team -   
+  - Sheila  
+    slhanson11@live.com  
+  - Martin  
+    martin.aguero84@gmail.com  
+  - Toan  
+    ttngbt06@gmail.com  
+  - Zach  
+    zach.zsa.allen@gmail.com  
 
 ## License 
 
@@ -181,5 +196,3 @@ Martin, Toan, Zach
 ![Prettier](https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E) ![Zoom](https://img.shields.io/badge/Zoom-2D8CFF?style=for-the-badge&logo=zoom&logoColor=white) ![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)  ![Google Chrome](https://img.shields.io/badge/Google_chrome-4285F4?style=for-the-badge&logo=Google-chrome&logoColor=white)  ![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)  
 ![MYSQLITE](https://img.shields.io/badge/Sqlite-003B57?style=for-the-badge&logo=sqlite&logoColor=white) ![Stack Overflow](https://img.shields.io/badge/Stack_Overflow-FE7A16?style=for-the-badge&logo=stack-overflow&logoColor=white)  ![Lenovo](https://img.shields.io/badge/lenovo%20laptop-E2231A?style=for-the-badge&logo=lenovo&logoColor=white)   ![Handlebars](https://img.shields.io/badge/Handlebars%20js-f0772b?style=for-the-badge&logo=handlebarsdotjs&logoColor=black)
  
-
-
