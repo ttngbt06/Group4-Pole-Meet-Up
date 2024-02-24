@@ -69,6 +69,14 @@ router.get("/poll/:id", async (req, res) => {
     });
 
 });
+
+// router.get("/user", async (req, res) => {
+//   // Get all users who are contacts
+//   const usersData = await Users.findAll({
+//     include: [{model: Users, attributes: []}]
+//   })
+// })
+
   //console.log('test');
 
   // Go get all polls to be displayed on the homepage if would like
