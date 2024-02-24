@@ -5,7 +5,9 @@ header {
     text-align: center;
 }
 nav {
-    
+    display: flex;
+    justify-content: start;
+    column-gap: 15px;
 }
 #top-div {
     display: flex;
@@ -58,7 +60,7 @@ nav {
 }
 button {
     height: 25px;
-    width: 60px;
+    width: auto;
     border: none;
     background-color: rgb(34, 34, 241);
     color: white;

@@ -26,6 +26,28 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
+//Routes for additional pages when user is logged in:
+router.get('/createpoll', withAuth, (req, res) => {
+  res.render('createpoll', {
+    logged_in: req.session.logged_in
+  });
+});
+router.get('/pollhistory', withAuth, (req, res) => {
+  res.render('pollhistory', {
+    logged_in: req.session.logged_in
+  });
+});
+router.get('/browse', withAuth, (req, res) => {
+  res.render('browse', {
+    logged_in: req.session.logged_in
+  });
+});
+router.get('/contactlist', withAuth, (req, res) => {
+  res.render('contactlist', {
+    logged_in: req.session.logged_in
+  });
+});
+
 // This must be last so other APIs are found first
 router.get("/", async (req, res) => {
   // Get all polls and JOIN with user data
