@@ -5,3 +5,18 @@
     <p>Expires On {{poll.expiration_date}}</p>
   </a>
 {{/each}}
+
+<h3>Add a Poll</h3>
+<form class='form new-poll-form'>
+  <div class='form-group'>
+    <label for='poll'>poll:</label>
+    <textarea class='form-input' id='poll' name='poll'></textarea>
+  </div>
+  <div class='form-group'>
+    <button type='submit' class='btn btn-primary btn-create' value="{{id}}">Create</button>
+  </div>
+
+
+<script src='/js/scriptPolls.js'></script>
+
+</form>

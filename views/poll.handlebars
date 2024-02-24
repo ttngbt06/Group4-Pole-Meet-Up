@@ -1,1 +1,31 @@
 {{poll.title}}
+<div class='text-center'>
+  <h2>{{title}}</h2>
+  <p>{{description}}</p>
+  <p>Created by {{user.name}} on {{format_date date_created}}</p>
+  <p>
+    <button class='btn btn-primary'>Create Poll</button>
+  </p>
+</div>
+
+<h3>Add a Comment</h3>
+<form class='form new-comment-form'>
+  <div class='form-group'>
+    <label for='comment'>comment:</label>
+    <textarea class='form-input' id='comment' name='comment'></textarea>
+  </div>
+  <div class='form-group'>
+    <button type='submit' class='btn btn-primary btn-create' value="{{id}}">Create</button>
+  </div>
+</form>
+<br>
+{{#if comments.length}}
+  <h3>Comments:</h3>
+
+  {{#each comments as |comment|}}
+    <p><b>{{format_time comment.date_created}}</b><br
+      />{{comment.comment_content}}</p>
+  {{/each}}
+{{/if}}
+
+<script src='/js/scriptPolls.js'></script>
