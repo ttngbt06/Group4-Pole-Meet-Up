@@ -34,6 +34,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(routes);
 
+// Socket logic
 const http = require("http");
 const server = http.createServer(app);
 const { Server } = require("socket.io");
@@ -50,7 +51,6 @@ let totalVotes = 0;
     TinnersPublicHouse: 0,
   };
 
-  // const io = require('socket.io')(8000, {cors: {origin: "*"}});
   socket.on("send-vote", (voteTo) => {
     // console.log("TEST 1");
     // console.log(voteTo);
