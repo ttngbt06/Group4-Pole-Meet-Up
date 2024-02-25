@@ -54,6 +54,25 @@ router.get("/browse", withAuth, async (req, res) => {
   });
 });
 
+// Get a poll by ID
+// Render it in the poll handlebars
+router.get('/poll/:id', async (req, res) => {
+  console.log('get poll by id');
+  try {
+    const pollData = await Polls.findByPk(req.params.id, {
+      include: [{ all: true, nested: true }],
+    });
+    const poll = pollData.get({ plain: true });
+    res.render('poll', {
+      poll: poll,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.get("/contactlist", withAuth, async (req, res) => {
   const userData = await Users.findAll({
     // Sort by user name
@@ -94,28 +113,14 @@ router.get("/pollhistory", async (req, res) => {
   res.render("login");
 });
 
-// Get a poll by ID
-// Render it in the poll handlebars
-router.get('/poll/:id', async (req, res) => {
-  console.log('get poll by id');
-  try {
-    const pollData = await Polls.findByPk(req.params.id, {
-      include: [{ all: true, nested: true }],
-    });
-    const poll = pollData.get({ plain: true });
-    res.render('poll', {
-      poll: poll,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
 // This must be last so other APIs are found first
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
+  const categoriesData = await Categories.findAll();
+  // Serialize data so the template can read it
+  const categories = categoriesData.map((category) => category.get());
+  //console.log(categories);
   res.render("homepage", {
+    categories: categories,
     logged_in: req.session.logged_in,
   });
 });

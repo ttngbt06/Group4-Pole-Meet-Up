@@ -20,3 +20,39 @@
     </div>
     <p><img src="/images/homeimg2.PNG" alt="polls example"></p>
 </div>
+<div id="bottom-div">
+    <h2>Resources</h2>
+    <div class="column">
+        {{#each categories as |category|}}
+            <div class="category">
+                <h3>{{category.title}}</h3>
+            </div>
+        {{/each}}
+    </div>
+    <div class="column">
+        <div>
+            <ul>
+                <li>Tripadvisor Restaurants</li>
+                <li>Tripadvisor Restaurants</li>
+                <li>Tripadvisor Restaurants</li>
+                <li>Tripadvisor Restaurants</li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>Ticketmaster</li>
+                <li>Ticketmaster</li>
+                <li>Ticketmaster</li>
+                <li>Ticketmaster</li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>Eventbrite</li>
+                <li>Eventbrite</li>
+                <li>Eventbrite</li>
+                <li>Eventbrite</li>
+            </ul>
+        </div>
+    </div>
+</div>
