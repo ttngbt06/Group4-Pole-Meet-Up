@@ -1,9 +1,10 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Polls</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/jass.css">
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">    
   </head>
   <body>
     <header>
@@ -12,19 +13,21 @@
     <nav>
       <a href="/"><button>Home</button></a>
       {{#if logged_in}}
-      <button id="logout" class="btn-no-style">Logout</button>
-      <a href="/createpoll"><button>Create a Poll</button></a>
-      <a href="/pollhistory"><button>Polls History</button></a>
-      <a href="/browse"><button>Browse Polls</button></a>
-      <a href="/contactlist"><button>Contacts List</button></a>
+        <button id="logout" class="btn-no-style">Logout</button>
+        <a href="/createpoll"><button>Create a Poll</button></a>
+        <a href="/pollhistory"><button>Polls History</button></a>
+        <a href="/browse"><button>Browse Polls</button></a>
+        <a href="/contactlist"><button>Contacts List</button></a>
       {{else}}
-      <a href="/login"><button>Login</button></a>
-      <a href="/signup" id="signup"><button>Sign Up</button></a>
+        <a href="/login"><button>Login</button></a>
+        <a href="/signup" id="signup"><button>Sign Up</button></a>
       {{/if}}
     </nav>
-    <hr>
+    <hr />
     <main>
+      <div class="content">
         {{{body}}}
+      </div>
     </main>
     <script src="/js/logout.js"></script>
   </body>

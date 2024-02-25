@@ -1,6 +1,6 @@
 # Group4-Poll-Meet-Up<!-- omit from toc -->
 by Martin, Zach, Toan and Sheila ![Github license](https://img.shields.io/badge/license-MIT-blue.svg)  
- ![alt text])  insert logo here
+![alt text](assets/imgs/logo1.png)
 ## Description <!-- omit from toc -->
 This is a interactive and mobile responsive site to assist you and your friends with deciding where to meet up. Logged in users can create a poll(s) with suggestion and the group can vote on their preferred choice.  Logged in users can also view past polls, create polls, and vote.   
 ## Table of Contents <!-- omit from toc -->
@@ -148,6 +148,7 @@ This is a interactive and mobile responsive site to assist you and your friends 
 [cdnjs](https://cdnjs.com/libraries)  
 [socket.io](https://socket.io/blog/socket-io-3-release/)  
 [handlebars](https://handlebarsjs.com/)  
+[heroku](https://stackoverflow.com/questions/69196421/seed-mysql-database-on-heroku)  
 U of M teachers and materials from bootcamp  
 
 ## Testing
