@@ -1,12 +1,8 @@
 <div id="poll" data="{{poll.id}}">
-  <h4>{{poll.title}}</h4>
-  <p>Created by:
-    {{poll.user.name}}
-    on
-    {{format_time poll.date_created}}
-    (expires
-    <span id="expiration" data="{{poll.expiration_date}}"">{{format_time poll.expiration_date}})</span></p>
-  <p>{{poll.description}}</p>
+  <h2>{{poll.title}}</h2>
+  <p><b>Created by:</b> {{poll.user.name}} on {{format_time poll.date_created}}<br>
+    <b>Expires:</b> <span id="expiration" data="{{poll.expiration_date}}">{{format_time poll.expiration_date}}</span></p>
+  <h3>{{poll.description}}</h3>
 
   <div class="container">
     {{#each poll.options as |option|}}

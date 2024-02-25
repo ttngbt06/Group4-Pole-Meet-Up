@@ -3,7 +3,9 @@
     "id": 1,
     "user_id": 4,
     "title": "Where should we eat?",
-    "description": "A poll to decide where the production team should have lunch on Friday"
+    "description": "A poll to decide where the production team should have lunch on Friday",
+    "date_created": "2024-02-20 12:00:01",
+    "expiration_date": "2024-02-21 12:00:01"
   },
   {
     "id": 2,

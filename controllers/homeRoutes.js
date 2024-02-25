@@ -38,7 +38,9 @@ router.get("/createpoll", withAuth, (req, res) => {
 router.get("/browse", withAuth, async (req, res) => {
   const pollData = await Polls.findAll({
     // Expiration date is greater than now (not expired)
+    // Sort by expiration date
     where: { expiration_date: { [Op.gt]: new Date() } },
+    order: Sequelize.literal('expiration_date ASC'),
     include: [
       {
         model: Users,
@@ -52,8 +54,16 @@ router.get("/browse", withAuth, async (req, res) => {
   });
 });
 
-router.get("/contactlist", withAuth, (req, res) => {
+router.get("/contactlist", withAuth, async (req, res) => {
+  const userData = await Users.findAll({
+    // Sort by user name
+    // https://stackoverflow.com/questions/36259532/sequelize-findall-sort-order-in-nodejs
+    order: Sequelize.literal('name ASC')
+  });
+  const users = userData.map((user) => user.get());
+
   res.render("contactlist", {
+    users: users,
     logged_in: req.session.logged_in,
   });
 });
@@ -62,7 +72,9 @@ router.get("/pollhistory", async (req, res) => {
   if (req.session.logged_in) {
     const pollData = await Polls.findAll({
       // Expiration date is less than now (expired)
+      // Sort by expiration date
       where: { expiration_date: { [Op.lte]: new Date() } },
+      order: Sequelize.literal('expiration_date ASC'),
       include: [
         {
           model: Users,
