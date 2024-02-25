@@ -37,7 +37,7 @@ router.post("/", withAuth, async (req, res) => {
   //console.log(req.body);
   try {
     const newPollsData = await Polls.create({
-      user_id: req.body.user_id,
+      user_id: req.session.user_id,
       title: req.body.title,
       description: req.body.description,
     });
