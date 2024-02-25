@@ -1,8 +1,8 @@
 <h2>Expired Polls</h2>
 {{#each polls as |poll|}}
 <h3><a href="/poll/{{poll.id}}">{{poll.title}}</a></h3>
-<p>{{poll.description}}<br>
-<b>Created by:</b> {{poll.user.dataValues.name}} on {{format_time poll.date_created}}<br>
-<b>Expires:</b> {{format_time poll.expiration_date}}</p>
+<p>{{poll.description}}</p>
+<p><b>Created by:</b> {{poll.user.dataValues.name}} on {{format_time poll.date_created}}</p>
+<p><b>Expires:</b> {{format_time poll.expiration_date}}</p>
 <hr>
 {{/each}}
