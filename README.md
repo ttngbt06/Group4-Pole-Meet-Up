@@ -1,6 +1,6 @@
 # Group4-Poll-Meet-Up<!-- omit from toc -->
 by Martin, Zach, Toan and Sheila ![Github license](https://img.shields.io/badge/license-MIT-blue.svg)  
-![alt text](assets/imgs/logo1.png)
+![alt text](assets/imgs/Logo2.png)
 ## Description <!-- omit from toc -->
 This is a interactive and mobile responsive site to assist you and your friends with deciding where to meet up. Logged in users can create a poll(s) with suggestion and the group can vote on their preferred choice.  Logged in users can also view past polls, create polls, and vote.   
 ## Table of Contents <!-- omit from toc -->
