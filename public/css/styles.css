@@ -14,6 +14,10 @@ body {
 header {
   text-align: center;
 }
+header a {
+  display: block;
+  margin-bottom: 20px;
+}
 nav button {
   display: block;
   width: 100%;
@@ -202,7 +206,7 @@ button:hover {
 @media screen and (min-width: 476px) {
   nav {
     display: flex;
-    justify-content: start;
+    justify-content: flex-end;
     column-gap: 5px;
   }
   nav button {
@@ -212,7 +216,7 @@ button:hover {
   }
   p {
     margin-top: 5px;
-  }  
+  }
 }
 
 @media screen and (min-width: 576px) {
@@ -231,6 +235,14 @@ button:hover {
 }
 
 @media screen and (min-width: 768px) {
+  header h1 {
+    margin-left: 45px;
+    padding-top: 50px;
+  }
+  header a {
+    display: flex;
+    margin-top: -110px;
+  }
   nav {
     column-gap: 15px;
   }
