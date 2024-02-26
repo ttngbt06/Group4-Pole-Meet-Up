@@ -1,8 +1,8 @@
 # Group4-Poll-Meet-Up<!-- omit from toc -->
 By:   Martin, Zach, Toan and Sheila   
-![alt text](public/images/logo.png)
+  ![alt text](public/images/logo.png)
 ## Description <!-- omit from toc -->
-This is a interactive and mobile responsive site to assist you and your friends with deciding where to meet up. Logged in users can create a poll(s) with suggestion and the group can vote on their preferred choice.  Logged in users can also view past polls, create polls, users, user email, and vote.   
+This is an interactive and mobile responsive site to assist you, your friends and family with meet-up plans. This is a live polling app with real time results.  Logged in users can create a poll(s) with up to 5 choices, browse active/past polls, view contacts and their email address. 
 ## Table of Contents <!-- omit from toc -->
   
 - [Installation](#installation)
@@ -102,12 +102,13 @@ This is a interactive and mobile responsive site to assist you and your friends 
   ![alt text](assets/imgs/wireframe.png)  
 
 ## View of homepage  
-  ****ADD IMAGE OF HOMEPAGE HERE****
+  ![alt text](assets/imgs/homepage.png)
 
 
 ## Features
   - Using socket.io
   - Using handlebars
+  - Google fonts
 
 ## Challenges  
   - Learning a new language, socket.io and handlebars  
@@ -128,11 +129,13 @@ This is a interactive and mobile responsive site to assist you and your friends 
 [Sequelize](https://sequelize.org/docs/v6/getting-started/)   
 [YouTube](https://youtube.com)  
 [Insomnia](https://insomnia.rest)  
-[Logo Maker](https://logo.com/)  
-[cdnjs](https://cdnjs.com/libraries)  
-[socket.io](https://socket.io/blog/socket-io-3-release/)  
-[handlebars](https://handlebarsjs.com/)  
-[heroku](https://stackoverflow.com/questions/69196421/seed-mysql-database-on-heroku)  
+[Logo Maker](https://www.logomaker.com/step3/logo/970381673)  
+[CDNjs](https://cdnjs.com/libraries)  
+[Socket.io](https://socket.io/blog/socket-io-3-release/)  
+[Handlebars](https://handlebarsjs.com/)  
+[Heroku](https://stackoverflow.com/questions/69196421/seed-mysql-database-on-heroku)  
+[Google Fonts](https://fonts.google.com/)  
+[MySQL Workbench](https://www.mysql.com/products/workbench/)  
 U of M teachers and materials from bootcamp  
 
 ## Testing
