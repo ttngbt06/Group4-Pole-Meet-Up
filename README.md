@@ -2,7 +2,7 @@
 By:   Martin, Zach, Toan and Sheila   
 ![alt text](public/images/logo.png)
 ## Description <!-- omit from toc -->
-This is a interactive and mobile responsive site to assist you and your friends with deciding where to meet up. Logged in users can create a poll(s) with suggestion and the group can vote on their preferred choice.  Logged in users can also view past polls, create polls, and vote.   
+This is a interactive and mobile responsive site to assist you and your friends with deciding where to meet up. Logged in users can create a poll(s) with suggestion and the group can vote on their preferred choice.  Logged in users can also view past polls, create polls, users, user email, and vote.   
 ## Table of Contents <!-- omit from toc -->
   
 - [Installation](#installation)
@@ -43,8 +43,8 @@ This is a interactive and mobile responsive site to assist you and your friends 
      - **THEN**  I am greeted with a display of various types of events including food, sports, and entertainment, showcasing what the app has to offer
 
 
-     - **WHEN**  I click on the homepage
-     - **THEN**  I am taken to the login / sign up screen
+     - **WHEN**  I click on the home
+     - **THEN**  I am taken to the homepage
      
      - **WHEN**  I choose to sign up
      - **THEN**  I am prompted to create a username and a password, and submit an email address
@@ -59,35 +59,19 @@ This is a interactive and mobile responsive site to assist you and your friends 
      - **THEN**  I see options for Browse, Create Poll, Poll History, Contact List, and to log out
 
      - **WHEN**  I click Browse
-     - **THEN**  I am brought to another screen to choose from food/dining, sports, and entertainment events
+     - **THEN**  I am brought to another screen showing all active polls
 
-     - **WHEN**  I click on any of these options
-     - **THEN**  I am brought to another screen displaying relevant options to the user's location
-
-     - **WHEN**  I click Back
-     - **THEN**  I am brought back to a previous screen with options to Browse, Create Poll, Poll History, or view Contact List
-
-     - **WHEN**  I click Create Poll
-     - **THEN**  I am brought to a form to fill out Poll options and what recipients to include in my Poll, with a Submit button
+     - **WHEN**  I click a Create Poll
+     - **THEN**  I am brought to a form to create a Poll and to enter up to five options with a Create Poll button
 
      - **WHEN**  I click Submit
-     - **THEN**  the poll is sent to recipients and all users are given 24 hours to vote
+     - **THEN**  as the users vote I will see a live status of results
 
      - **WHEN**  I click Poll History
-     - **THEN**  I am able to view a list in chronological order of all Polls I have created or have been a part of
+     - **THEN**  I am able to view a list in chronological order of all Polls I have been created by users
 
-     - **WHEN**  I click Back, 
-     - **THEN**  I am brought back to the previous screen with Browse, Create, History, and Contact List options
-
-     - **WHEN**  I click Contact List
-     - **THEN**  I am brought to a screen with my list of contacts, with options to add, edit, and delete contacts
-
-     - **WHEN**  I click Add,
-     - **THEN**  I am prompted to enter my contact's email or phone number
-     
-
-
-
+     - **WHEN**  I click Contacts List
+     - **THEN**  I am brought to a screen with a list on users who you may email  
       
 ## Usage 
 - Run schema
@@ -126,7 +110,7 @@ This is a interactive and mobile responsive site to assist you and your friends 
   - Using handlebars
 
 ## Challenges  
-  - Learning a new language, socket.io  
+  - Learning a new language, socket.io and handlebars  
   - Group project 
     - divide and conquer while maintaining great communication to all cohorts
 
