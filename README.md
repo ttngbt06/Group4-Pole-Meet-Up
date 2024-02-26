@@ -65,10 +65,10 @@ This is a interactive and mobile responsive site to assist you and your friends 
      - **THEN**  I am brought to a form to create a Poll and to enter up to five options with a Create Poll button
 
      - **WHEN**  I click Submit
-     - **THEN**  as the users vote I will see a live status of results
+     - **THEN**  as the users vote I will see a live polling of results
 
      - **WHEN**  I click Poll History
-     - **THEN**  I am able to view a list in chronological order of all Polls I have been created by users
+     - **THEN**  I am able to view a list in chronological order of all Polls that have been created by users
 
      - **WHEN**  I click Contacts List
      - **THEN**  I am brought to a screen with a list on users who you may email  
